@@ -11,10 +11,10 @@ services:
       - key: PORT
         value: 3001
 
-  - type: static
+  - type: static_site
     name: salon-frontend
     staticPublishPath: ./dist
     buildCommand: npm install && npm run build
     routes:
-      - path: /api
-        destination: http://salon-backend:3001/api
+      - path: /api/*
+        destination: http://salon-backend:3001/api/*
