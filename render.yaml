@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: salon-backend
+    env: node
+    plan: free
+    buildCommand: cd backend && npm install
+    startCommand: node backend/server.js
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 3001
+
+  - type: static
+    name: salon-frontend
+    staticPublishPath: ./dist
+    buildCommand: npm install && npm run build
+    routes:
+      - path: /api
+        destination: http://salon-backend:3001/api
