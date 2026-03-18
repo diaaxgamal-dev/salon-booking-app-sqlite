@@ -1,20 +1,40 @@
 {
-  "name": "salon-backend",
+  "name": "salon-booking-app",
+  "private": true,
   "version": "1.0.0",
-  "main": "server.js",
+  "type": "module",
   "scripts": {
-    "start": "node server.js"
+    "dev": "vite --host",
+    "build": "vite build",
+    "lint": "eslint .",
+    "preview": "vite preview",
+    "install-all": "npm install && cd backend && npm install",
+    "start": "node backend/server.js",
+    "render-build": "npm install && cd backend && npm install && npm run build"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "Salon Backend API mit SQLite",
   "dependencies": {
-    "bcryptjs": "^3.0.3",
-    "better-sqlite3": "^12.8.0",
-    "cors": "^2.8.6",
-    "dotenv": "^17.3.1",
-    "express": "^5.2.1",
-    "uuid": "^13.0.0"
+    "lucide-react": "^0.475.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "bcryptjs": "^3.0.0",
+    "better-sqlite3": "^11.8.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "uuid": "^11.0.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.19.0",
+    "@types/react": "^19.0.8",
+    "@types/react-dom": "^19.0.3",
+    "@vitejs/plugin-react": "^4.3.4",
+    "autoprefixer": "^10.4.20",
+    "eslint": "^9.19.0",
+    "eslint-plugin-react-hooks": "^5.1.0",
+    "eslint-plugin-react-refresh": "^0.4.18",
+    "globals": "^15.14.0",
+    "postcss": "^8.5.1",
+    "tailwindcss": "^3.4.17",
+    "vite": "^6.1.0"
   }
 }
